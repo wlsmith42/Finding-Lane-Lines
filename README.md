@@ -47,15 +47,13 @@ Now that the lines are clearly visible, I remove the extra information in the im
 ![alt text][image3]
 
 
-Next, I convert the image to grayscale. One interesting outcome of this step is that the image in HLS color space does not have the same grayscale as an image in RGB color space. Overall, this color space issue did not affect the final result so I left this step in the pipeline although it may not have been completely necessary.
-
-After the image is converted to grayscale, I apply Gaussian smoothing to help smooth out color gradients to improve the accuracy of the Canny Edge Detection.
+Next, I convert the image to grayscale and then apply Gaussian smoothing to help smooth out color gradients to improve the accuracy of the Canny Edge Detection.
 
 At last the image is ready for Canny Edge Detection! I used a low threshold of 50 and a high threshold of 150 and that seemed to do a good job.
 ![alt text][image4]
 
 
-Once again, to help remove extra information, I apply a mask to the image so that the only pixels remaining reflect the lines on the road. This filters out all of the white and yellow pixels elsewhere in the image that would otherwise alter the line averaging in the next step.
+Once again, to help remove extra information, I apply a mask to the image so that the only pixels remaining reflect the lines on the road. This filters out all of the pixels elsewhere in the image that would otherwise alter the line averaging in the next step.
 ![alt text][image5]
 
 
